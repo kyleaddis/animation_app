@@ -1,0 +1,29 @@
+<!doctype html>
+<html>
+<head>
+  <title>WebRTC: Still photo capture demo</title>
+  <meta charset='utf-8'>
+  <link rel="stylesheet" href="main.css" type="text/css" media="all">
+</head>
+<body>
+  <h1>WebRTC: Still photo capture demo</h1>
+  <p>
+    This example demonstrates how to set up a media stream using your built-in webcam, fetch an image from that stream, and create a PNG using that image.
+  </p>
+  <main>
+    <div class="camera">
+      <video id="video" class="mediabox">Video stream not available.</video>
+      <button id="startbutton">Take photo</button> 
+    </div>
+    <canvas id="canvas">
+    </canvas>
+    <div class="output">
+      <img id="photo" class="mediabox" alt="The screen capture will appear in this box."> 
+    </div>
+  </main>
+  <p>
+    See MDN <a href="https://developer.mozilla.org/en-US/docs/Web/API/WebRTC_API/Taking_still_photos"> Taking still photos with WebRTC</a>.
+  </p>
+  <script src="capture.js"></script>
+</body>
+</html>

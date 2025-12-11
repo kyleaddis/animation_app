@@ -1,0 +1,40 @@
+body {
+  font-size: 1em;
+  font-family: "Lucida Grande", "Arial", sans-serif;
+  text-align: center;
+}
+
+main {
+  display: flex;
+  justify-content: space-around;
+  width: 740px;
+  margin: 0 auto;
+}
+
+.mediabox {
+  border: 1px solid black;
+  width: 320px;
+  height: 240px;
+}
+
+canvas {
+  display: none;
+}
+
+.camera button {
+  display: block;
+  position: relative;
+  margin: 0 auto;
+  bottom: 32px;
+  outline: none;
+  background-color: rgba(0, 150, 0, 0.5);
+  border: 1px solid rgba(255, 255, 255, 0.7);
+  border-radius: 3px;
+  color: rgba(255, 255, 255, 1.0);
+}
+.camera button:hover {
+  box-shadow: 0 0 4px rgba(255, 255, 255, 1.0);
+}
+.camera button:active {
+  box-shadow: none;
+}
