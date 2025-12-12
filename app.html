@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <link rel="stylesheet" href="main.css" type="text/css" media="all">
+  <title>Stop Motion Animation Studio</title>
+</head>
+<body>
+  <div class="container">
+    <div class="header">
+      <input type="text" id="projectName" value="Untitled Project" placeholder="Project Name">
+    </div>
+
+    <div class="main-grid">
+      <div class="panel">
+        <div class="panel-header">
+          <h2 class="panel-title">Camera</h2>
+          <div class="button-group" id="cameraControls">
+            <button id="startCamera">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M23 19a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h4l2-3h6l2 3h4a2 2 0 0 1 2 2z"></path>
+                <circle cx="12" cy="13" r="4"></circle>
+              </svg>
+              Start Camera
+            </button>
+          </div>
+        </div>
+        
+        <div id="videoContainer">
+          <video id="video" autoplay playsinline muted></video>
+          <img id="playbackImg" style="display: none;">
+        </div>
+        <canvas id="canvas"></canvas>
+      </div>
+
+      <div class="panel">
+        <h2 class="panel-title" style="margin-bottom: 1rem;">Controls</h2>
+        
+        <div class="controls">
+          <div class="control-group">
+            <label>FPS: <span id="fpsValue">12</span></label>
+            <input type="range" id="fpsSlider" min="1" max="30" value="12">
+          </div>
+
+          <button id="playBtn" class="green full-width" disabled>
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+              <polygon points="5 3 19 12 5 21 5 3"></polygon>
+            </svg>
+            Play (0 frames)
+          </button>
+
+          <button id="exportBtn" class="purple full-width" disabled>
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
+              <polyline points="7 10 12 15 17 10"></polyline>
+              <line x1="12" y1="15" x2="12" y2="3"></line>
+            </svg>
+            Export Video
+          </button>
+
+          <button id="saveBtn" class="full-width" disabled>
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M19 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11l5 5v11a2 2 0 0 1-2 2z"></path>
+              <polyline points="17 21 17 13 7 13 7 21"></polyline>
+              <polyline points="7 3 7 8 15 8"></polyline>
+            </svg>
+            Save Project
+          </button>
+
+          <label for="loadInput" class="yellow full-width" style="cursor: pointer;">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M22 19a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h5l2 3h9a2 2 0 0 1 2 2z"></path>
+            </svg>
+            Load Project
+            <input type="file" id="loadInput" accept=".json">
+          </label>
+        </div>
+      </div>
+    </div>
+
+    <div class="panel">
+      <h2 class="panel-title" style="margin-bottom: 1rem;">Timeline (<span id="frameCount">0</span> frames)</h2>
+      
+      <div id="timeline" class="timeline"></div>
+      <div id="emptyState" class="empty-state">
+        No frames captured yet. Start your camera and capture some frames!
+      </div>
+    </div>
+  </div>
+
+<script src="capture.js"></script>
+</body>
+</html>
